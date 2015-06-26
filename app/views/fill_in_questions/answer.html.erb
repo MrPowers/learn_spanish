@@ -1,0 +1,8 @@
+<h1>Woo hoo</h1>
+<h2>Tense: <%= @question.tense %></h2>
+<h2>Verb: <%= @question.verb %></h2>
+<h2>Sentence: <%= @question.sentence %></h2>
+
+<p class="correct-answer">The correct answer was: <%= @question.correct_answer %></p>
+
+<%= link_to "Next question", root_path %>

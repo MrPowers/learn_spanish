@@ -30,3 +30,5 @@ verbs = [
 verbs.each do |attrs|
   Verb.create!(attrs)
 end
+
+FillInQuestion.create!({pronoun: "yo", verb: "querer", tense: "present", sentence: "Yo _____ ir a la playa"})
