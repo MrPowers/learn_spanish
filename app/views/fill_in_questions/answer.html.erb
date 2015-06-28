@@ -1,8 +1,5 @@
-<h1>Woo hoo</h1>
-<h2>Tense: <%= @question.tense %></h2>
-<h2>Verb: <%= @question.verb %></h2>
-<h2>Sentence: <%= @question.sentence %></h2>
-
-<p class="correct-answer">The correct answer was: <%= @question.correct_answer %></p>
+<h2><%= @question.tense %> Tense</h2>
+<h2>Sentence: <%= @question.spanish_sentence %> (<%= @question.verb %>)</h2>
+<h2><%= @question.english_sentence %></h2>
 
 <%= link_to "Next question", root_path %>

@@ -4,7 +4,8 @@ class CreateFillInQuestions < ActiveRecord::Migration
       t.string :pronoun
       t.string :verb
       t.string :tense
-      t.text :sentence
+      t.text :spanish_sentence
+      t.text :english_sentence
 
       t.timestamps null: false
     end

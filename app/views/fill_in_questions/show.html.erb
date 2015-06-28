@@ -1,0 +1,11 @@
+<h2><%= @question.tense %> Tense</h2>
+<h2>Sentence: <%= @question.spanish_sentence %> (<%= @question.verb %>)</h2>
+<p class="hidden" id="correct-answer"><%= @question.correct_answer %></p>
+
+<%= form_for FillInAnswer.new do |f| %>
+  <%= f.text_field :answer %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :fill_in_question_id, :value => @question.id %>
+  <%= f.submit %>
+<% end %>
+

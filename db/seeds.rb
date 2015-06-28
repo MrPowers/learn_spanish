@@ -28,7 +28,20 @@ verbs = [
 ]
 
 verbs.each do |attrs|
-  Verb.create!(attrs)
+  Verb.where(attrs).first_or_create
 end
 
-FillInQuestion.create!({pronoun: "yo", verb: "querer", tense: "present", sentence: "Yo _____ ir a la playa"})
+questions = [
+  {
+    pronoun: "yo",
+    verb: "querer",
+    tense: "present",
+    spanish_sentence: "Yo _____ ir a la playa",
+    english_sentence: "I want to go to the beach"
+  }
+]
+
+questions.each do |attrs|
+  FillInQuestion.where(attrs).first_or_create
+end
+
