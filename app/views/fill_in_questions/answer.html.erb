@@ -1,5 +1,6 @@
-<h2><%= @question.tense %> Tense</h2>
-<h2>Sentence: <%= @question.spanish_sentence %> (<%= @question.verb %>)</h2>
-<h2><%= @question.english_sentence %></h2>
+<div class="jumbotron">
+  <%= render "spanish_question" %>
+  <p><%= @question.english_sentence %></p>
+  <%= link_to "Next question", root_path, class: "btn btn-lg btn-primary" %>
+</div>
 
-<%= link_to "Next question", root_path %>

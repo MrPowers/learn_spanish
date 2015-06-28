@@ -1,11 +1,9 @@
-<h2><%= @question.tense %> Tense</h2>
-<h2><%= @question.spanish_sentence %> (<%= @question.verb %>)</h2>
-<p class="hidden" id="correct-answer"><%= @question.correct_answer %></p>
-
-<%= form_for FillInAnswer.new do |f| %>
-  <%= f.text_field :answer %>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.hidden_field :fill_in_question_id, :value => @question.id %>
-  <%= f.submit %>
-<% end %>
-
+<div class="jumbotron">
+  <%= render "spanish_question" %>
+  <%= form_for FillInAnswer.new do |f| %>
+    <p><%= f.text_field :answer, autofocus: true %></p>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :fill_in_question_id, :value => @question.id %>
+    <%= f.submit "Submit Answer", class: "btn btn-lg btn-primary" %>
+  <% end %>
+</div>
