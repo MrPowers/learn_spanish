@@ -1,5 +1,5 @@
 <h2><%= @question.tense %> Tense</h2>
-<h2>Sentence: <%= @question.spanish_sentence %> (<%= @question.verb %>)</h2>
+<h2><%= @question.spanish_sentence %> (<%= @question.verb %>)</h2>
 <p class="hidden" id="correct-answer"><%= @question.correct_answer %></p>
 
 <%= form_for FillInAnswer.new do |f| %>
