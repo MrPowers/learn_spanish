@@ -123,6 +123,34 @@ questions = [
     spanish_sentence: "Yo _____ a la tienda",
     english_sentence: "I go to the store"
   }
+  {
+    pronoun: "yo",
+    verb: "ver",
+    tense: "present",
+    spanish_sentence: "Yo _____ la naturaleza",
+    english_sentence: "I see the nature"
+  }
+  {
+    pronoun: "yo",
+    verb: "dar",
+    tense: "present",
+    spanish_sentence: "Yo _____ comida a los perros",
+    english_sentence: "I give food to the dogs"
+  }
+  {
+    pronoun: "yo",
+    verb: "saber",
+    tense: "present",
+    spanish_sentence: "Yo _____ matemáticas",
+    english_sentence: "I know maths"
+  }
+  {
+    pronoun: "yo",
+    verb: "llegar",
+    tense: "present",
+    spanish_sentence: "Yo _____ temprano",
+    english_sentence: "I arrive early"
+  }
 ]
 
 questions.each do |attrs|
