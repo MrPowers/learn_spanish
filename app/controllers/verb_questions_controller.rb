@@ -3,6 +3,7 @@ class VerbQuestionsController < ApplicationController
   def show
     @question = VerbQuestion.find(params[:id])
     @skill_level = VerbSkillLevel.where(user_id: current_user.id).first
+    @percent_complete = (@skill_level.current_level.to_f / VerbQuestion.count * 100).round(0)
   end
 
   def next_question

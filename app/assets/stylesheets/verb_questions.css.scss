@@ -1,0 +1,25 @@
+body {
+  background-color: #428bca;
+}
+
+p {
+  color: white;
+  opacity: 0.8;
+  font-size: 3em;
+  text-align: center;
+}
+
+form p {
+  color: black;
+}
+
+.centerize {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.supporting-text {
+  font-size: 1.5em;
+  font-style: italic;
+}

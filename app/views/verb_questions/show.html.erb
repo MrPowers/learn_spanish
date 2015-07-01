@@ -1,9 +1,17 @@
-<div class="jumbotron">
-  <%= render "spanish_question" %>
-  <%= form_for VerbAnswer.new do |f| %>
-    <p><%= f.text_field :answer, autofocus: true %></p>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.hidden_field :verb_question_id, :value => @question.id %>
-    <%= f.submit "Submit Answer", class: "btn btn-lg btn-primary" %>
-  <% end %>
+<p><%= @question.spanish_sentence %> <strong>(<%= @question.verb.spanish %>)</strong></p>
+
+<%= form_for VerbAnswer.new do |f| %>
+  <p><%= f.text_field :answer, autofocus: true %></p>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :verb_question_id, :value => @question.id %>
+  <%= f.submit "Submit Answer", class: "btn btn-lg btn-success centerize" %>
+<% end %>
+
+<p class="supporting-text"><%= @question.tense.titleize %> Tense</span></p>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+  aria-valuemin="0" aria-valuemax="100" style="width:<%= @percent_complete %>%">
+    <%= @percent_complete %>% Complete
+  </div>
 </div>
