@@ -69,84 +69,84 @@ end
 questions = [
   {
     pronoun: "yo",
-    verb: "querer",
-    tense: "present",
-    spanish_sentence: "Yo _____ ir a la playa",
-    english_sentence: "I want to go to the beach"
-  },
-  {
-    pronoun: "yo",
-    verb: "ser",
+    verb_id: 1,
     tense: "present",
     spanish_sentence: "Yo _____ alto",
     english_sentence: "I am tall"
   },
   {
     pronoun: "yo",
-    verb: "estar",
+    verb_id: 2,
     tense: "present",
     spanish_sentence: "Yo _____ feliz",
     english_sentence: "I am happy"
   },
   {
     pronoun: "yo",
-    verb: "tener",
+    verb_id: 3,
     tense: "present",
     spanish_sentence: "Yo _____ una pregunta",
     english_sentence: "I have a question"
   },
   {
     pronoun: "yo",
-    verb: "hacer",
+    verb_id: 4,
     tense: "present",
     spanish_sentence: "Yo _____ la cama",
     english_sentence: "I make the bed"
   },
   {
     pronoun: "yo",
-    verb: "poder",
+    verb_id: 5,
     tense: "present",
     spanish_sentence: "Yo _____ hablar con él",
     english_sentence: "I can talk with him"
   },
   {
     pronoun: "yo",
-    verb: "decir",
+    verb_id: 6,
     tense: "present",
     spanish_sentence: "Yo _____ cosas estupidas a veces",
     english_sentence: "I say stupid things sometimes"
   },
   {
     pronoun: "yo",
-    verb: "ir",
+    verb_id: 7,
     tense: "present",
     spanish_sentence: "Yo _____ a la tienda",
     english_sentence: "I go to the store"
-  }
+  },
   {
     pronoun: "yo",
-    verb: "ver",
+    verb_id: 8,
     tense: "present",
     spanish_sentence: "Yo _____ la naturaleza",
-    english_sentence: "I see the nature"
-  }
+    english_sentence: "I see nature"
+  },
   {
     pronoun: "yo",
-    verb: "dar",
+    verb_id: 9,
     tense: "present",
     spanish_sentence: "Yo _____ comida a los perros",
     english_sentence: "I give food to the dogs"
-  }
+  },
   {
     pronoun: "yo",
-    verb: "saber",
+    verb_id: 10,
     tense: "present",
     spanish_sentence: "Yo _____ matemáticas",
-    english_sentence: "I know maths"
-  }
+    english_sentence: "I know math"
+  },
   {
     pronoun: "yo",
-    verb: "llegar",
+    verb_id: 11,
+    tense: "present",
+    spanish_sentence: "Yo _____ ir a la playa",
+    english_sentence: "I want to go to the beach"
+  },
+  {
+    pronoun: "yo",
+    verb_id: 12,
     tense: "present",
     spanish_sentence: "Yo _____ temprano",
     english_sentence: "I arrive early"

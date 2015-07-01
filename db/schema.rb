@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150628233800) do
 
   create_table "fill_in_questions", force: :cascade do |t|
     t.string   "pronoun"
-    t.string   "verb"
+    t.integer  "verb_id"
     t.string   "tense"
     t.text     "spanish_sentence"
     t.text     "english_sentence"
