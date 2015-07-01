@@ -2,6 +2,7 @@ class VerbQuestionsController < ApplicationController
 
   def show
     @question = VerbQuestion.find(params[:id])
+    @skill_level = VerbSkillLevel.where(user_id: current_user.id).first
   end
 
   def random
@@ -11,6 +12,7 @@ class VerbQuestionsController < ApplicationController
 
   def answer
     @question = VerbQuestion.find(params[:id])
+    @skill_level = VerbSkillLevel.where(user_id: current_user.id).first
   end
 
 end
