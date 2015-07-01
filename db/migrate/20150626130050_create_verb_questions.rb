@@ -1,6 +1,6 @@
-class CreateFillInQuestions < ActiveRecord::Migration
+class CreateVerbQuestions < ActiveRecord::Migration
   def change
-    create_table :fill_in_questions do |t|
+    create_table :verb_questions do |t|
       t.string :pronoun
       t.integer :verb_id
       t.string :tense

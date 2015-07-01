@@ -1,4 +1,4 @@
-class FillInQuestion < ActiveRecord::Base
+class VerbQuestion < ActiveRecord::Base
 
   belongs_to :verb
 

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  get '/fill_in_questions/:id/answer', to: 'fill_in_questions#answer', as: "fill_in_question_answer"
-  get '/fill_in_questions/:id', to: 'fill_in_questions#show'
-  resources :fill_in_answers
-  root to: "fill_in_questions#random"
+  get '/verb_questions/:id/answer', to: 'verb_questions#answer', as: "verb_question_answer"
+  get '/verb_questions/:id', to: 'verb_questions#show'
+  resources :verb_answers
+  root to: "verb_questions#random"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -154,6 +154,6 @@ questions = [
 ]
 
 questions.each do |attrs|
-  FillInQuestion.where(attrs).first_or_create
+  VerbQuestion.where(attrs).first_or_create
 end
 

@@ -1,9 +1,9 @@
 <div class="jumbotron">
   <%= render "spanish_question" %>
-  <%= form_for FillInAnswer.new do |f| %>
+  <%= form_for VerbAnswer.new do |f| %>
     <p><%= f.text_field :answer, autofocus: true %></p>
     <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.hidden_field :fill_in_question_id, :value => @question.id %>
+    <%= f.hidden_field :verb_question_id, :value => @question.id %>
     <%= f.submit "Submit Answer", class: "btn btn-lg btn-primary" %>
   <% end %>
 </div>
