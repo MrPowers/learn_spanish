@@ -7,7 +7,7 @@
   <%= f.submit "Submit Answer", class: "btn btn-lg btn-success centerize" %>
 <% end %>
 
-<p class="supporting-text"><%= @question.tense.titleize %> Tense</span></p>
+<p class="supporting-text"><%= @question.tense.titleize %> Tense</p>
 
 <div class="progress">
   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
@@ -15,3 +15,5 @@
     <%= @percent_complete %>% Complete
   </div>
 </div>
+
+<p class="supporting-text">Progress goes up for correct answers and down for incorrect answers</p>

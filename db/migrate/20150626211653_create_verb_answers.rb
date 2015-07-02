@@ -4,6 +4,7 @@ class CreateVerbAnswers < ActiveRecord::Migration
       t.text :answer
       t.integer :user_id
       t.integer :verb_question_id
+      t.integer :verb_exam_id
 
       t.timestamps null: false
     end

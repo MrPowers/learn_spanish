@@ -38,8 +38,17 @@ ActiveRecord::Schema.define(version: 20150628233800) do
     t.text     "answer"
     t.integer  "user_id"
     t.integer  "verb_question_id"
+    t.integer  "verb_exam_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "verb_exams", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "skill_level",             default: 1
+    t.boolean  "was_last_answer_correct", default: true
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
   create_table "verb_questions", force: :cascade do |t|
@@ -50,14 +59,6 @@ ActiveRecord::Schema.define(version: 20150628233800) do
     t.text     "english_sentence"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-  end
-
-  create_table "verb_skill_levels", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "current_level",           default: 1
-    t.boolean  "was_last_answer_correct", default: true
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
   end
 
   create_table "verbs", force: :cascade do |t|
