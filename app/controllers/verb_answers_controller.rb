@@ -1,5 +1,7 @@
 class VerbAnswersController < ApplicationController
 
+  before_filter :require_login
+
   def create
     @answer = VerbAnswer.create!(answer_params)
     update_level
