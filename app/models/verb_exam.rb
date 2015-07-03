@@ -1,7 +1,9 @@
 class VerbExam < ActiveRecord::Base
 
   def percent_complete
-    (skill_level.to_f / total_question_count * 100).round(0)
+    r = ((skill_level - 1).to_f / total_question_count * 100).round(0)
+    return 100 if r > 100
+    r
   end
 
   def next_question
