@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/verb_questions/:id/answer', to: 'verb_questions#answer', as: "verb_question_answer"
   resources :verb_questions
   resources :verb_answers
+  get 'next_question', to: "verb_exams#next_question", as: "next_question"
   root to: "verb_exams#next_question"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,4 +1,6 @@
-<%= render "spanish_question" %>
-<p><%= @question.english_sentence %></p>
+<p>Your answer: <%= @answer.answer %></p>
+<p>Correct answer: <%= @question.correct_answer %></p>
+<p>Full Spanish sentence: <%= @question.full_spanish_sentence %></p>
+<p>English translation: <%= @question.english_sentence %></p>
 <%= link_to "Next question", root_path, class: "btn btn-lg btn-success centerize" %>
 
