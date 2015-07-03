@@ -1,5 +1,7 @@
 class VerbQuestionsController < ApplicationController
 
+  before_filter :require_login
+
   def show
     @question = VerbQuestion.find(params[:id])
     @verb_exam = VerbExam.where(user_id: current_user.id).first_or_create

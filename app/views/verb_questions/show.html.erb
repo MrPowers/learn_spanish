@@ -9,11 +9,16 @@
 
 <p class="supporting-text"><%= @question.tense.titleize %> Tense</p>
 
-<div class="progress">
-  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-  aria-valuemin="0" aria-valuemax="100" style="width:<%= @verb_exam.percent_complete %>%">
-    <%= @verb_exam.percent_complete %>% Complete
-  </div>
-</div>
+<footer class="footer">
+  <div class="container">
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+      aria-valuemin="0" aria-valuemax="100" style="width:<%= @verb_exam.percent_complete %>%">
+        <%= @verb_exam.percent_complete %>% Complete
+      </div>
+    </div>
 
-<p class="supporting-text">Progress goes up for correct answers and down for incorrect answers</p>
+    <p class="supporting-text">Progress goes up for correct answers and down for incorrect answers</p>
+  </div>
+</footer>
+
