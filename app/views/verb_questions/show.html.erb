@@ -1,13 +1,13 @@
-<p><%= @question.spanish_sentence %> <strong>(<%= @question.verb.spanish %>)</strong></p>
+<p class="whiteify centerize main-text"><%= @question.spanish_sentence %> <strong>(<%= @question.verb.spanish %>)</strong></p>
 
 <%= form_for VerbAnswer.new do |f| %>
-  <p><%= f.text_field :answer, autofocus: true %></p>
+  <p class="centerize main-text"><%= f.text_field :answer, autofocus: true %></p>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.hidden_field :verb_question_id, :value => @question.id %>
   <%= f.submit "Submit Answer", class: "btn btn-lg btn-success centerize" %>
 <% end %>
 
-<p class="supporting-text"><%= @question.tense.titleize %> Tense</p>
+<p class="whiteify centerize supporting-text"><%= @question.tense.titleize %> Tense</p>
 
 <footer class="footer">
   <div class="container">
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <p class="supporting-text">Progress goes up for correct answers and down for incorrect answers</p>
+    <p class="whiteify centerize supporting-text">Progress goes up for correct answers and down for incorrect answers</p>
   </div>
 </footer>
 
