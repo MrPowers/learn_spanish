@@ -7,7 +7,7 @@ class VerbExam < ActiveRecord::Base
   end
 
   def next_question
-    VerbQuestion.joins(:verb).where(verbs: {frequency_rank: next_question_frequency}).first
+    VerbQuestion.joins(:verb).where(verbs: {frequency_rank: next_question_frequency}).sample
   end
 
   private

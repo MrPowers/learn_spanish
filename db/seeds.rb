@@ -4,7 +4,6 @@ CSV.foreach(f, headers: true, col_sep: "|").each do |attrs|
   Verb.where(attrs.to_h).first_or_create
 end
 
-
 f = Rails.root.join("db", "data", "present_tense_questions.csv")
 CSV.foreach(f, headers: true, col_sep: "|").each do |attrs|
   VerbQuestion.where(attrs.to_h).first_or_create
