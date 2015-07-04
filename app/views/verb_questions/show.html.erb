@@ -1,23 +1,33 @@
 <%= form_for VerbAnswer.new do |f| %>
-  <p class="whiteify centerize main-text"><%= raw @question.spanish_sentence.gsub("_____", f.text_field(:answer, autofocus: true, class: "blueify")) %> <strong>(<%= @question.verb.spanish %>)</strong></p>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.hidden_field :verb_question_id, :value => @question.id %>
-  <%= f.submit "Submit Answer", class: "btn btn-lg btn-success centerize" %>
+  <p class="whiteify centerize main-text">
+    <%= raw @question.spanish_sentence.gsub("_____", f.text_field(:answer, autofocus: true, class: "blueify", size: "12")) %> <strong>(<%= @question.verb.spanish %>)</strong>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :verb_question_id, :value => @question.id %>
+    <%= f.submit "Check", class: "btn btn-lg btn-success centerize check-answer" %>
+  </p>
 <% end %>
-
 
 <p class="whiteify centerize supporting-text"><%= @question.tense.titleize %> Tense</p>
 
+<br />
+<br />
+<br />
+<br />
+
+<div class="container">
+  <div class="progress">
+    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+    aria-valuemin="0" aria-valuemax="100" style="width:<%= @verb_exam.percent_complete %>%">
+      <%= @verb_exam.percent_complete %>% Complete
+    </div>
+  </div>
+
+  <p class="whiteify centerize supporting-text">Progress goes up for correct answers and down for incorrect answers</p>
+</div>
+
 <footer class="footer">
   <div class="container">
-    <div class="progress">
-      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-      aria-valuemin="0" aria-valuemax="100" style="width:<%= @verb_exam.percent_complete %>%">
-        <%= @verb_exam.percent_complete %>% Complete
-      </div>
-    </div>
-
-    <p class="whiteify centerize supporting-text">Progress goes up for correct answers and down for incorrect answers</p>
+    <p class="whiteify centerize">Turco Software Inc.</p>
   </div>
 </footer>
 
