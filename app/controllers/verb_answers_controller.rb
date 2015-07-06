@@ -5,16 +5,16 @@ class VerbAnswersController < ApplicationController
   def create
     @answer = VerbAnswer.create!(answer_params)
     update_level
-    redirect_to redirect_path, :flash => flash_message
+    redirect_to redirect_path(params[:tense]), :flash => flash_message
   end
 
   private
 
-  def redirect_path
+  def redirect_path(tense)
     if was_last_answer_correct?
-      next_question_path
+      next_question_path(tense: tense)
     else
-      verb_question_answer_path(@answer.verb_question)
+      verb_question_answer_path(tense: tense, id: @answer.verb_question)
     end
   end
 

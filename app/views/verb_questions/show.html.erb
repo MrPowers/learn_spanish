@@ -1,4 +1,4 @@
-<%= form_for VerbAnswer.new do |f| %>
+<%= form_for VerbAnswer.new, :url => verb_answers_path(:tense => params[:tense]), :html => {:method => :post} do |f| %>
   <p class="whiteify centerize main-text">
     <%= raw @question.spanish_sentence.gsub("_____", f.text_field(:answer, autofocus: true, class: "blueify", size: "12")) %> <strong>(<%= @question.verb.spanish %>)</strong>
     <%= f.hidden_field :user_id, :value => current_user.id %>

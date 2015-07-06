@@ -33,7 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
-gem 'conjugate'
+gem 'conjugate', :git => 'git@github.com:JeremyGeros/Conjugate.git'
 gem 'pry'
 
 gem 'rails_12factor', group: :production

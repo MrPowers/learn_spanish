@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628233800) do
+ActiveRecord::Schema.define(version: 20150705224027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,10 +43,17 @@ ActiveRecord::Schema.define(version: 20150628233800) do
     t.datetime "updated_at",       null: false
   end
 
+  create_table "verb_exam_definitions", force: :cascade do |t|
+    t.string   "tense"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "verb_exams", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "skill_level",             default: 1
     t.boolean  "was_last_answer_correct", default: true
+    t.integer  "verb_exam_definition_id"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
   end

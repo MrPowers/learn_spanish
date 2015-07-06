@@ -9,3 +9,12 @@ CSV.foreach(f, headers: true, col_sep: "|").each do |attrs|
   VerbQuestion.where(attrs.to_h).first_or_create
 end
 
+definitions = [
+  { tense: "present" },
+  { tense: "preterite" },
+  { tense: "imperfect" }
+]
+
+definitions.each do |definition|
+  VerbExamDefinition.where(definition).first_or_create
+end

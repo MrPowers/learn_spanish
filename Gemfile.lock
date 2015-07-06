@@ -1,3 +1,9 @@
+GIT
+  remote: git@github.com:JeremyGeros/Conjugate.git
+  revision: 69bd59607609b6260fe0e51b44b5db398813e2c7
+  specs:
+    conjugate (1.5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,7 +58,6 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
-    conjugate (1.5.0)
     debug_inspector (0.0.2)
     devise (3.5.1)
       bcrypt (~> 3.0)
@@ -170,7 +175,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
-  conjugate
+  conjugate!
   devise
   jbuilder (~> 2.0)
   jquery-rails
