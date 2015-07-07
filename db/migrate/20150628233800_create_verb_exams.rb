@@ -5,6 +5,7 @@ class CreateVerbExams < ActiveRecord::Migration
       t.integer :skill_level, default: 1
       t.boolean :was_last_answer_correct, default: true
       t.integer :verb_exam_definition_id
+      t.string :tense
 
       t.timestamps null: false
     end

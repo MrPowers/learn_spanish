@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20150705224027) do
     t.integer  "skill_level",             default: 1
     t.boolean  "was_last_answer_correct", default: true
     t.integer  "verb_exam_definition_id"
+    t.string   "tense"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
   end

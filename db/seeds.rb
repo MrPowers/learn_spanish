@@ -9,6 +9,11 @@ CSV.foreach(f, headers: true, col_sep: "|").each do |attrs|
   VerbQuestion.where(attrs.to_h).first_or_create
 end
 
+f = Rails.root.join("db", "data", "preterite_tense_questions.csv")
+CSV.foreach(f, headers: true, col_sep: "|").each do |attrs|
+  VerbQuestion.where(attrs.to_h).first_or_create
+end
+
 definitions = [
   { tense: "present" },
   { tense: "preterite" },

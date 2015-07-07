@@ -9,7 +9,7 @@ class VerbExam < ActiveRecord::Base
   end
 
   def next_question
-    VerbQuestion.joins(:verb).where(verbs: {frequency_rank: next_question_frequency}).sample
+    VerbQuestion.where(tense: tense).joins(:verb).where(verbs: {frequency_rank: next_question_frequency}).sample
   end
 
   private
@@ -22,6 +22,10 @@ class VerbExam < ActiveRecord::Base
 
   def total_verb_count
     Verb.count
+  end
+
+  def tense
+    verb_exam_definition.tense
   end
 
 end
