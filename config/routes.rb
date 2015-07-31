@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'exam_definitions/index'
   resources :questions
+  get '/questions/:id/answer', to: 'questions#answer', as: "question_answer"
 
   root to: "exam_definitions#index"
   ## old routes
