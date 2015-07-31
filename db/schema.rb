@@ -11,10 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731220546) do
+ActiveRecord::Schema.define(version: 20150731224248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.integer  "question_id"
+    t.text     "user_answer"
+    t.boolean  "is_correct"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "exam_definitions", force: :cascade do |t|
+    t.text     "exam_name"
+    t.text     "query"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "exams", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "exam_name"
+    t.float    "skill_level"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "exams_questions", id: false, force: :cascade do |t|
+    t.integer "exam_id"
+    t.integer "question_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.text     "spanish"
+    t.text     "english"
+    t.text     "answer"
+    t.text     "hint"
+    t.string   "tense"
+    t.integer  "word_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
