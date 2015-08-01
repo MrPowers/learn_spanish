@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20150731224248) do
 
   create_table "exam_definitions", force: :cascade do |t|
     t.text     "exam_name"
-    t.text     "query"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

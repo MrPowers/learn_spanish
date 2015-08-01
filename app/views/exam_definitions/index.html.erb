@@ -1,1 +1,3 @@
-<h1>I am here, OK</h1>
+<% @definitions.each do |definition| %>
+  <p><%= link_to definition.exam_name, set_exam_definition_path(exam_definition_id: definition.id), method: :post %></p>
+<% end %>

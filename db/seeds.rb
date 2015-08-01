@@ -1,12 +1,10 @@
 ## exam definitions
 [
   {
-    exam_name: "Present Tense Verbs",
-    query: ""
+    exam_name: "Present Tense Verbs"
   },
   {
-    exam_name: "Most Common Words",
-    query: ""
+    exam_name: "Most Common Words"
   }
 ].each do |args|
   ExamDefinition.where(args).first_or_create
