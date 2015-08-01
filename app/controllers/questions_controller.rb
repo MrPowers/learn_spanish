@@ -6,7 +6,4 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
   end
 
-  def answer
-  end
-
 end

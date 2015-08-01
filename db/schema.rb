@@ -32,17 +32,17 @@ ActiveRecord::Schema.define(version: 20150731224248) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "exams", force: :cascade do |t|
-    t.integer  "user_id"
-    t.text     "exam_name"
-    t.float    "skill_level"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table "exam_definitions_questions", id: false, force: :cascade do |t|
+    t.integer "exam_definition_id"
+    t.integer "question_id"
   end
 
-  create_table "exams_questions", id: false, force: :cascade do |t|
-    t.integer "exam_id"
-    t.integer "question_id"
+  create_table "exams", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "exam_definition_id"
+    t.float    "skill_level"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "questions", force: :cascade do |t|

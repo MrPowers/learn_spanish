@@ -4,7 +4,12 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.create!(answer_params)
-    redirect_to root_path
+    redirect_to @answer
+  end
+
+  def show
+    @answer = Answer.find(params[:id])
+    @question = @answer.question
   end
 
   private
