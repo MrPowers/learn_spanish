@@ -1,1 +1,9 @@
-<h2>I can show a question</h2>
+<%= form_for Answer.new, :url => answers_path, :html => {:method => :post} do |f| %>
+  <p class="whiteify centerize main-text">
+    <%= raw @question.spanish.gsub("_____", f.text_field(:user_answer, autofocus: true, class: "blueify", size: "12")) %> <strong>(<%= @question.hint %>)</strong>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :question_id, :value => @question.id %>
+    <%= f.submit "Check", class: "btn btn-lg btn-success centerize check-answer" %>
+  </p>
+<% end %>
+

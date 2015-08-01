@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150731224248) do
     t.integer  "question_id"
     t.text     "user_answer"
     t.boolean  "is_correct"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
