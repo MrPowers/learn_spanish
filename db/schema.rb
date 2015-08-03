@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20150731224248) do
   create_table "exams", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "exam_definition_id"
-    t.float    "skill_level",        default: 1.0
+    t.float    "skill_level",        default: 0.0
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
   end

@@ -4,7 +4,16 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.create!(answer_params)
-    redirect_to @answer
+    exam = Exam.where(user_id: current_user.id, exam_definition_id: session[:exam_definition_id]).first_or_create
+    if @answer.is_correct
+      exam.skill_level += 1
+      exam.save!
+      redirect_to next_question_path
+    else
+      exam.skill_level -= 1
+      exam.save!
+      redirect_to @answer
+    end
   end
 
   def show
