@@ -3,7 +3,7 @@ class CreateExams < ActiveRecord::Migration
     create_table :exams do |t|
       t.integer :user_id
       t.integer :exam_definition_id
-      t.float :skill_level
+      t.float :skill_level, default: 1
 
       t.timestamps null: false
     end
