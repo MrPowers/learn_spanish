@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 20150731224248) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "exam_definitions_questions", id: false, force: :cascade do |t|
+  create_table "exam_definitions_words", id: false, force: :cascade do |t|
     t.integer "exam_definition_id"
-    t.integer "question_id"
+    t.integer "word_id"
   end
 
   create_table "exams", force: :cascade do |t|
