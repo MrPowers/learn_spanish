@@ -1,11 +1,13 @@
 <div class="row col-md-4 col-md-offset-4">
 
-  <p class="whiteify">Log in</p>
+  <h3 class="whiteify centerize">Welcome back! Please sign in</h3>
+
+  <hr class="colorgraph">
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email, class: "sr-only" %>
-      <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email address"%>
+      <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "E-mail"%>
     </div>
 
     <div class="field">
@@ -13,10 +15,14 @@
       <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
     </div>
 
+    <br />
+
     <div class="actions">
       <%= f.submit "Log in", class: "btn btn-lg btn-success btn-block" %>
     </div>
   <% end %>
+
+  <br />
 
   <%= render "devise/shared/links" %>
 
