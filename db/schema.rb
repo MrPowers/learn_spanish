@@ -108,49 +108,6 @@ ActiveRecord::Schema.define(version: 20150805210653) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "verb_answers", force: :cascade do |t|
-    t.text     "answer"
-    t.integer  "user_id"
-    t.integer  "verb_question_id"
-    t.integer  "verb_exam_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  create_table "verb_exam_definitions", force: :cascade do |t|
-    t.string   "tense"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "verb_exams", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "skill_level",             default: 1
-    t.boolean  "was_last_answer_correct", default: true
-    t.integer  "verb_exam_definition_id"
-    t.string   "tense"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-  end
-
-  create_table "verb_questions", force: :cascade do |t|
-    t.string   "pronoun"
-    t.integer  "verb_id"
-    t.string   "tense"
-    t.text     "spanish_sentence"
-    t.text     "english_sentence"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  create_table "verbs", force: :cascade do |t|
-    t.integer  "frequency_rank"
-    t.string   "spanish"
-    t.string   "english"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
   create_table "words", force: :cascade do |t|
     t.string   "spanish"
     t.string   "english"
