@@ -1,5 +1,6 @@
 class Word < ActiveRecord::Base
-  has_and_belongs_to_many :exam_definitions
+  has_many :exam_definitions, through: :exam_definitions_words
+  has_many :exam_definitions_words
   has_many :questions
 
   def to_s

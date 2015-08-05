@@ -1,6 +1,15 @@
-ActiveAdmin.register Question do
+ActiveAdmin.register ExamDefinitionsWord do
 
-  permit_params :word_id, :spanish, :english, :answer, :hint, :tense
+  index do
+    id_column
+    column :exam_definition do |e|
+      e.exam_definition
+    end
+    column :word do |e|
+      e.word
+    end
+    actions
+  end
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
