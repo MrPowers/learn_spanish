@@ -13,5 +13,4 @@ ActiveAdmin.register Question do
     actions
   end
 
-
 end
