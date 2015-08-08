@@ -11,4 +11,15 @@ ActiveAdmin.register Word do
     actions
   end
 
+  form do |f|
+    f.inputs "Word" do
+      f.input :spanish
+      f.input :english
+      f.input :part_of_speech, as: :select, collection: Word.parts_of_speech
+      f.input :frequency
+      f.input :commonly_oral
+    end
+    actions
+  end
+
 end
