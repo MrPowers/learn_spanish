@@ -1,5 +1,7 @@
 ActiveAdmin.register ExamDefinitionsWord do
 
+  permit_params :exam_definition_id, :word_id
+
   index do
     id_column
     column :exam_definition do |e|
