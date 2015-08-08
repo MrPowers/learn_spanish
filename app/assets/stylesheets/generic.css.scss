@@ -22,3 +22,22 @@
   font-size: 1.5em;
   font-style: italic;
 }
+
+.wrong-answer {
+  background-color: #b48484;
+}
+
+.right-answer {
+  background-color: #47a2de;
+}
+
+.outer-circle {
+    background: #385a94;
+    border-radius: 50%;
+    height:30px;
+    width:30px;
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 0 0 10px black;
+    margin:10px;
+}
