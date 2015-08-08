@@ -18,6 +18,8 @@ class Word < ActiveRecord::Base
     ]
   end
 
+  validates :part_of_speech, inclusion: { in: parts_of_speech }
+
   def to_s
     spanish
   end
