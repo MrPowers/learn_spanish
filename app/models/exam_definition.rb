@@ -4,6 +4,12 @@ class ExamDefinition < ActiveRecord::Base
 
   validates :exam_name, presence: true
 
+  def exam_percent_complete(current_user)
+    exam = Exam.where(exam_definition_id: id, user_id: current_user.id).first
+    return 0 unless exam
+    exam.percent_complete
+  end
+
   def random_question
     words.sample.questions.sample
   end
