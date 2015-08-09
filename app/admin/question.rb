@@ -5,10 +5,23 @@ ActiveAdmin.register Question do
   index do
     column :spanish
     column :english
+    column :answer
     column :hint
     column :tense
     column :word do |q|
       q.word
+    end
+    actions
+  end
+
+  form do |f|
+    f.inputs "Question" do
+      f.input :word
+      f.input :spanish
+      f.input :english
+      f.input :answer
+      f.input :hint
+      f.input :tense, as: :select, collection: Question.tenses
     end
     actions
   end
