@@ -10,3 +10,16 @@ form p {
   display: inline;
 }
 
+.user-answer {
+  display: inline-table;
+}
+
+.answer-hint {
+  font-size: 0.7em;
+  font-style: italic;
+  vertical-align: text-top;
+}
+
+#answer_user_answer {
+  text-align: center;
+}
