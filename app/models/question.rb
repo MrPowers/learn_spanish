@@ -9,9 +9,13 @@ class Question < ActiveRecord::Base
     ]
   end
 
-  validates :tense, inclusion: { in: tenses }, allow_blank: true
-
+  validates :spanish, presence: true
   validate :spanish_contains_five_underscores
+  validates :english, presence: true
+  validates :answer, presence: true
+  validates :hint, presence: true
+  validates :tense, inclusion: { in: tenses }, allow_blank: true
+  validates :word_id, presence: true
 
   def spanish_contains_five_underscores
     unless spanish.include?("_____")

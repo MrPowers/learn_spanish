@@ -18,7 +18,11 @@ class Word < ActiveRecord::Base
     ]
   end
 
+  validates :spanish, presence: true
+  validates :english, presence: true
+  validates :part_of_speech, presence: true
   validates :part_of_speech, inclusion: { in: parts_of_speech }
+  validates :frequency, presence: true
 
   def to_s
     spanish

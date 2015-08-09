@@ -2,6 +2,8 @@ class ExamDefinition < ActiveRecord::Base
   has_many :words, through: :exam_definitions_words
   has_many :exam_definitions_words
 
+  validates :exam_name, presence: true
+
   def random_question
     words.sample.questions.sample
   end
