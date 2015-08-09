@@ -1,24 +1,28 @@
-<div class="col-md-6 whiteify wrong-answer">
-  <p class="main-text centerize"><%= @answer.user_answer %></p>
-  <p class="supporting-text centerize">Your answer</p>
+<div class="col-md-12">
+  <div class="col-md-6 whiteify wrong-answer">
+    <div class="answer-explanation">
+      <p class="main-text centerize"><%= @answer.user_answer %></p>
+      <p class="supporting-text centerize">Your answer</p>
+    </div>
+  </div>
+
+  <div class="col-md-6 whiteify right-answer">
+    <p class="main-text centerize"><%= @question.answer %></p>
+    <p class="supporting-text centerize">Correct answer</p>
+  </div>
 </div>
 
-<div class="col-md-6 whiteify right-answer">
-  <p class="main-text centerize"><%= @question.answer %></p>
-  <p class="supporting-text centerize">Correct answer</p>
+<div class='row col-md-8 col-md-offset-2 answer-sentences'>
+  <p class="whiteify main-text"><%= emojify(":alien: #{@question.spanish_sentence}") %></p>
+  <p class="whiteify pull-right main-text"><%= emojify("#{@question.english} :smile:") %></p>
 </div>
 
-<br />
-
-<p class="whiteify centerize main-text"><%= @question.spanish_sentence %></p>
-<p class="whiteify centerize main-text"><%= @question.english %></p>
-
-<div class="row col-md-4 col-md-offset-4">
-  <%= link_to "Next question", next_question_path, class: "btn btn-lg btn-success centerize", id: "next-question" %>
+<div class='row col-md-12'>
+  <div class="row col-md-4 col-md-offset-4">
+    <%= link_to "Next question", next_question_path, class: "btn btn-lg btn-success centerize main-text", id: "next-question" %>
+  </div>
 </div>
 
-<br />
-<br />
-<br />
-
-<p class="supporting-text centerize whiteify">Hint: Press enter to move to the next question</p>
+<div class='row col-md-12 answer-shortcut-hint'>
+  <p class="supporting-text centerize whiteify">Hint: Press enter to move to the next question</p>
+</div>

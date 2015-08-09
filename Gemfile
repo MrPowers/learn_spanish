@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'pry'
 gem 'activeadmin', '~> 1.0.0.pre1'
+gem 'gemoji'
 
 gem 'rails_12factor', group: :production
 
