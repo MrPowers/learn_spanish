@@ -1,6 +1,7 @@
 class ExamDefinition < ActiveRecord::Base
   has_many :words, through: :exam_definitions_words
   has_many :exam_definitions_words
+  auto_strip_attributes :exam_name
 
   validates :exam_name, presence: true
 

@@ -1,5 +1,6 @@
 class Question < ActiveRecord::Base
   belongs_to :word
+  auto_strip_attributes :spanish, :english, :answer, :hint, :tense
 
   def self.tenses
     [

@@ -52,6 +52,8 @@ GEM
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.0)
+    auto_strip_attributes (2.0.6)
+      activerecord (>= 3.0)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -215,6 +217,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin (~> 1.0.0.pre1)
+  auto_strip_attributes (~> 2.0)
   better_errors
   binding_of_caller
   byebug

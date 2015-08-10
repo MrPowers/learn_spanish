@@ -35,6 +35,7 @@ gem 'devise'
 gem 'pry'
 gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'gemoji'
+gem "auto_strip_attributes", "~> 2.0"
 
 gem 'rails_12factor', group: :production
 

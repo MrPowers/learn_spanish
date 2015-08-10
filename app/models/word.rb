@@ -2,6 +2,7 @@ class Word < ActiveRecord::Base
   has_many :exam_definitions, through: :exam_definitions_words
   has_many :exam_definitions_words
   has_many :questions
+  auto_strip_attributes :spanish, :english, :part_of_speech, :frequency
 
   def self.parts_of_speech
     [
