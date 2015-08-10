@@ -16,7 +16,7 @@ ActiveAdmin.register Question do
 
   form do |f|
     f.inputs "Question" do
-      f.input :word
+      f.input :word, :collection => Word.all.sort_by(&:spanish), :input_html => {:autofocus => true}
       f.input :spanish
       f.input :english
       f.input :answer
