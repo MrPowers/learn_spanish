@@ -5,7 +5,7 @@ class Answer < ActiveRecord::Base
   after_create :update_is_correct
 
   def update_is_correct
-    self.is_correct = (question.answer == user_answer)
+    self.is_correct = (question.answer.downcase == user_answer.downcase)
     save!
   end
 
