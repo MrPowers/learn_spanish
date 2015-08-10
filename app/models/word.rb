@@ -16,7 +16,7 @@ class Word < ActiveRecord::Base
       "nf",
       "nm",
       "num"
-    ]
+    ].sort
   end
 
   validates :spanish, presence: true
