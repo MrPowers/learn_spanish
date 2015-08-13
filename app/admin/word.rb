@@ -22,4 +22,18 @@ ActiveAdmin.register Word do
     actions
   end
 
+  controller do
+    def create
+      super do |format|
+        redirect_to admin_questions_path and return if resource.valid?
+      end
+    end
+
+    def update
+      super do |format|
+        redirect_to admin_questions_path and return if resource.valid?
+      end
+    end
+  end
+
 end
