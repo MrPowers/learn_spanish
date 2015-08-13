@@ -25,13 +25,13 @@ ActiveAdmin.register Word do
   controller do
     def create
       super do |format|
-        redirect_to admin_questions_path and return if resource.valid?
+        redirect_to new_admin_question_path and return if resource.valid?
       end
     end
 
     def update
       super do |format|
-        redirect_to admin_questions_path and return if resource.valid?
+        redirect_to admin_words_path and return if resource.valid?
       end
     end
   end

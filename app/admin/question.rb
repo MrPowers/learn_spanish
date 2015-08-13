@@ -29,7 +29,7 @@ ActiveAdmin.register Question do
   controller do
     def create
       super do |format|
-        redirect_to admin_questions_path and return if resource.valid?
+        redirect_to new_admin_question_path and return if resource.valid?
       end
     end
 
