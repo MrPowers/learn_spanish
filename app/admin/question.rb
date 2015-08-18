@@ -1,6 +1,6 @@
 ActiveAdmin.register Question do
 
-  permit_params :word_id, :spanish, :english, :answer, :hint, :tense
+  permit_params :word_id, :spanish, :english, :answer, :hint, :tense, :admin_user_id, :checked
 
   index do
     column :spanish
@@ -8,6 +8,8 @@ ActiveAdmin.register Question do
     column :answer
     column :hint
     column :tense
+    column :admin_user_id
+    column :checked
     column :word do |q|
       q.word
     end
@@ -21,6 +23,8 @@ ActiveAdmin.register Question do
       f.input :english
       f.input :answer
       f.input :hint
+      f.hidden_field :admin_user_id, :value => current_admin_user.id
+      f.input :checked
       f.input :tense, as: :select, collection: Question.tenses
     end
     actions
