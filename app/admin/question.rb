@@ -11,9 +11,12 @@ ActiveAdmin.register Question do
     column :created_by do |question|
       question.admin_user.username if question.admin_user
     end
-    column :checked
     column :word do |q|
       q.word
+    end
+    column :checked
+    column "Mark checked" do |question|
+      link_to("Mark", admin_question_path(question, question: { checked: true }), remote: true, method: :patch, class: "mark-question")
     end
     actions
   end
