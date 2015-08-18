@@ -8,7 +8,9 @@ ActiveAdmin.register Question do
     column :answer
     column :hint
     column :tense
-    column :admin_user_id
+    column :created_by do |question|
+      question.admin_user.username if question.admin_user
+    end
     column :checked
     column :word do |q|
       q.word
