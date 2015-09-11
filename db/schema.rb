@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818050447) do
+ActiveRecord::Schema.define(version: 20150911012011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,6 +111,23 @@ ActiveRecord::Schema.define(version: 20150818050447) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "verb_diagnostic_answers", force: :cascade do |t|
+    t.integer  "question_id"
+    t.text     "user_answer"
+    t.boolean  "is_correct"
+    t.integer  "user_id"
+    t.integer  "verb_diagnostic_exam_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "verb_diagnostic_exams", force: :cascade do |t|
+    t.integer  "user_id"
+    t.float    "skill_level", default: 0.0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "words", force: :cascade do |t|
     t.string   "spanish"

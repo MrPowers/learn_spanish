@@ -1,0 +1,25 @@
+<% unless @question.tense.blank? %>
+  <p class="whiteify centerize supporting-text"><%= @question.tense.titleize %> Tense</p>
+<% end %>
+
+<br />
+
+<%= form_for VerbDiagnosticAnswer.new, :url => verb_diagnostic_answers_path, :html => {:method => :post} do |f| %>
+  <div class="whiteify centerize main-text">
+    <%= raw user_answer_text_field(f) %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :question_id, :value => @question.id %>
+    <%= f.submit "Check", class: "btn btn-lg btn-success centerize check-answer" %>
+  </div>
+<% end %>
+
+<br />
+
+<div class="container centerize">
+  <p class="whiteify centerize english-sentence-button btn btn-lg btn-success check-answer">Hint: See English Sentence</p>
+  <p class="whiteify centerize main-text hide"><%= @question.english %></p>
+</div>
+
+<br />
+<br />
+
