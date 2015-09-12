@@ -35,7 +35,7 @@ word_ser.questions.where(
 
 word_ser.questions.where(
   {
-    spanish: "Ella _____ mi mama",
+    spanish: "Ella _____ mi mamá",
     english: "She is my mother",
     answer: "es",
     hint: "is",
@@ -179,4 +179,68 @@ word_ser.questions.where(
 # Future
 #########
 
+word_ser.questions.where(
+  {
+    spanish: "Yo _____ una gran maestra",
+    english: "I will be a great teacher",
+    answer: "seré",
+    hint: "will be",
+    tense: "future"
+  }
+).first_or_create
+
+word_ser.questions.where(
+  {
+    spanish: "Tú _____ una buena madre",
+    english: "You will be a good mother",
+    answer: "serás",
+    hint: "will be",
+    tense: "future"
+  }
+).first_or_create
+
+word_ser.questions.where(
+  {
+    spanish: "Mañana _____ sábado",
+    english: "Tomorrow will be Saturday",
+    answer: "será",
+    hint: "will be",
+    tense: "future"
+  }
+).first_or_create
+
+word_ser.questions.where(
+  {
+    spanish: "Nosotros _____ esposos el proximo año",
+    english: "We will be husband and wife next year",
+    answer: "seremos",
+    hint: "will be",
+    tense: "future"
+  }
+).first_or_create
+
+word_ser.questions.where(
+  {
+    spanish: "Ellos _____ muy viejos en 20 años",
+    english: "They will be very old in 20 years",
+    answer: "serán",
+    hint: "will be",
+    tense: "future"
+  }
+).first_or_create
+
+
+#########
+# Conditional
+#########
+
+word_ser.questions.where(
+  {
+    spanish: "Yo _____ más feliz sin ti",
+    english: "They will be very old in 20 years",
+    answer: "serán",
+    hint: "will be",
+    tense: "conditional"
+  }
+).first_or_create
 

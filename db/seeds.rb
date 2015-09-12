@@ -15,15 +15,15 @@ Dir.glob("#{Rails.root}/db/seeds/*.rb").each {|f| require f}
   [7, "perfect_future"],
   [8, "perfect_conditional"],
   [9, "imperative"],
-  [10, "subjunctive_present"],
-  [11, "subjunctive_imperfect"],
-  [12, "subjunctive_future"],
-  [13, "subjunctive_imperfect_2"],
-  [14, "perfect_subjunctive_present"],
-  [15, "perfect_subjunctive_past"],
-  [16, "perfect_subjunctive_future"]
+  [10, "subjunctive_present"]
+  #[11, "subjunctive_imperfect"],
+  #[12, "subjunctive_future"],
+  #[13, "subjunctive_imperfect_2"],
+  #[14, "perfect_subjunctive_present"],
+  #[15, "perfect_subjunctive_past"],
+  #[16, "perfect_subjunctive_future"]
 ].each do |difficulty, tense|
-  VerbLearningPath.create!(difficulty: difficulty, tense: tense)
+  VerbLearningPath.where(difficulty: difficulty, tense: tense).first_or_create
 end
 
 # exam_definitions_words
