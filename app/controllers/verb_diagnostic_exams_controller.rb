@@ -17,7 +17,12 @@ class VerbDiagnosticExamsController < ApplicationController
   end
 
   def question
+    @exam = VerbDiagnosticExam.find(session[:verb_diagnostic_exam_id])
     @question = Question.find(params[:id])
+  end
+
+  def finished_exam
+    @exam = VerbDiagnosticExam.find(session[:verb_diagnostic_exam_id])
   end
 
 end

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/start_exam', to: "verb_diagnostic_exams#start_exam", as: "start_exam"
   get '/verb_next_question', to: "verb_diagnostic_exams#next_question", as: "verb_next_question"
   get '/verb_question/:id', to: "verb_diagnostic_exams#question", as: "verb_question"
-  resources :verb_diagnostic_answers, only: [:create]
+  resources :verb_diagnostic_answers, only: [:create, :show]
 
   get 'exam_definitions/index'
   resources :questions

@@ -9,4 +9,9 @@ class VerbDiagnosticAnswer < ActiveRecord::Base
     save!
   end
 
+  def difficulty
+    tense = question.tense
+    VerbLearningPath.where(tense: tense).first.difficulty
+  end
+
 end
