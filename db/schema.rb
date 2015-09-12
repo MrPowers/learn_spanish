@@ -124,9 +124,8 @@ ActiveRecord::Schema.define(version: 20150912141233) do
 
   create_table "verb_diagnostic_exams", force: :cascade do |t|
     t.integer  "user_id"
-    t.float    "skill_level", default: 0.0
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "verb_learning_paths", force: :cascade do |t|

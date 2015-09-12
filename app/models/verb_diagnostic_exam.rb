@@ -30,7 +30,7 @@ class VerbDiagnosticExam < ActiveRecord::Base
   end
 
   def words
-    ["ser", "estar", "tener"]
+    ["ser", "estar"]
   end
 
   def total_questions

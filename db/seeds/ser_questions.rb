@@ -72,8 +72,8 @@ word_ser.questions.where(
 
 word_ser.questions.where(
   {
-    spanish: "I _____ un doctor",
-    english: "I was a doctor",
+    spanish: "Yo _____ un estudiante",
+    english: "I was a estudiante",
     answer: "fui",
     hint: "was",
     tense: "preterite"
@@ -92,18 +92,8 @@ word_ser.questions.where(
 
 word_ser.questions.where(
   {
-    spanish: "Tú _____ un estudiante hace cinco años",
-    english: "You were a student five years ago",
-    answer: "fuiste",
-    hint: "were",
-    tense: "preterite"
-  }
-).first_or_create
-
-word_ser.questions.where(
-  {
-    spanish: "Ella _____ una estudiante en 2005",
-    english: "She was a student in 2005",
+    spanish: "Ella _____ la ganadora del concurso",
+    english: "She was the winner of the contest",
     answer: "fue",
     hint: "was",
     tense: "preterite"
@@ -112,7 +102,7 @@ word_ser.questions.where(
 
 word_ser.questions.where(
   {
-    spanish: "Nosotros _____ mejor amigos en 2010",
+    spanish: "Nosotros _____ mejores amigos en 2010",
     english: "We were best friends in 2010",
     answer: "fuimos",
     hint: "were",
@@ -122,7 +112,7 @@ word_ser.questions.where(
 
 word_ser.questions.where(
   {
-    spanish: "Ellos _____ jugadores de fútbol en colegio",
+    spanish: "Ellos _____ jugadores de fútbol en el colegio",
     english: "They were soccer players in high school",
     answer: "fueron",
     hint: "were",
@@ -133,6 +123,60 @@ word_ser.questions.where(
 
 #########
 # Imperfect
+#########
+
+word_ser.questions.where(
+  {
+    spanish: "Yo _____ jugador de fútbol",
+    english: "I used to be a soccer player",
+    answer: "era",
+    hint: "used to be",
+    tense: "imperfect"
+  }
+).first_or_create
+
+word_ser.questions.where(
+  {
+    spanish: "Tú _____ la amiga de Fred",
+    english: "You used to be Fred's friend",
+    answer: "eras",
+    hint: "used to be",
+    tense: "imperfect"
+  }
+).first_or_create
+
+word_ser.questions.where(
+  {
+    spanish: "Él _____ famoso en los años ochenta",
+    english: "He used to be famous in the 80s",
+    answer: "era",
+    hint: "used to be",
+    tense: "imperfect"
+  }
+).first_or_create
+
+word_ser.questions.where(
+  {
+    spanish: "Nosotros _____ inseparables",
+    english: "We used to be inseparable",
+    answer: "éramos",
+    hint: "used to be",
+    tense: "imperfect"
+  }
+).first_or_create
+
+word_ser.questions.where(
+  {
+    spanish: "Ellos _____ los mejores jugadores de tenis",
+    english: "They used to be the best tennis players",
+    answer: "eran",
+    hint: "used to be",
+    tense: "imperfect"
+  }
+).first_or_create
+
+#########
+# Future
 #########
 
 
