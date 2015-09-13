@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
 
+  get 'agencies/index'
+
   get '/welcome', to: "verb_diagnostic_exams#welcome", as: "welcome"
   get '/start_exam', to: "verb_diagnostic_exams#start_exam", as: "start_exam"
   get '/finish_exam', to: "verb_diagnostic_exams#finished_exam", as: "finished_exam"
