@@ -13,7 +13,15 @@ class VerbDiagnosticExamsController < ApplicationController
 
   def next_question
     exam = VerbDiagnosticExam.find(session[:verb_diagnostic_exam_id])
-    redirect_to verb_question_path(exam.next_question)
+    if exam.finished?
+      if exam.perfection?
+        redirect_to finished_perfection_path
+      else
+        redirect_to finished_exam_path
+      end
+    else
+      redirect_to verb_question_path(exam.next_question)
+    end
   end
 
   def question

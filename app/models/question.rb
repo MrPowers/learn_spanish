@@ -4,11 +4,7 @@ class Question < ActiveRecord::Base
   auto_strip_attributes :spanish, :english, :answer, :hint, :tense
 
   def self.tenses
-    [
-      "present",
-      "preterite",
-      "imperfect"
-    ]
+    VerbLearningPath.all.map(&:tense)
   end
 
   validates :spanish, presence: true

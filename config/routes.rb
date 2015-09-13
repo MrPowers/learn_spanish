@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get '/welcome', to: "verb_diagnostic_exams#welcome", as: "welcome"
   get '/start_exam', to: "verb_diagnostic_exams#start_exam", as: "start_exam"
+  get '/finish_exam', to: "verb_diagnostic_exams#finished_exam", as: "finished_exam"
+  get '/finished_perfection', to: "verb_diagnostic_exams#finished_perfection", as: "finished_perfection"
   get '/verb_next_question', to: "verb_diagnostic_exams#next_question", as: "verb_next_question"
   get '/verb_question/:id', to: "verb_diagnostic_exams#question", as: "verb_question"
   resources :verb_diagnostic_answers, only: [:create, :show]
