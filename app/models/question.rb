@@ -4,7 +4,7 @@ class Question < ActiveRecord::Base
   auto_strip_attributes :spanish, :english, :answer, :hint, :tense
 
   def self.tenses
-    VerbLearningPath.all.map(&:tense)
+    #VerbLearningPath.all.map(&:tense)
   end
 
   validates :spanish, presence: true
