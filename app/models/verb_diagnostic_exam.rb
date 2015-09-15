@@ -52,7 +52,7 @@ class VerbDiagnosticExam < ActiveRecord::Base
   end
 
   def total_questions
-    2
+    20
   end
 
   def number_of_questions_remaining

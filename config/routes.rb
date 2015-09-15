@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
 
-  get 'agencies/index'
-
   get '/welcome', to: "verb_diagnostic_exams#welcome", as: "welcome"
   get '/start_exam', to: "verb_diagnostic_exams#start_exam", as: "start_exam"
   get '/finish_exam', to: "verb_diagnostic_exams#finished_exam", as: "finished_exam"
@@ -21,5 +19,6 @@ Rails.application.routes.draw do
 
   get '/next_question', to: "question_finder#next_question", as: "next_question"
   post '/set_exam_definition', to: "question_finder#set_exam_definition", as: "set_exam_definition"
-  root to: "exam_definitions#index"
+
+  root to: 'agencies#index'
 end

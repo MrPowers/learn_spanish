@@ -14,4 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require_tree .
+//= require active_admin
+//= require exam_definition
+//= require footer
+//= require general
+//= require questions
+//= require textarea
+//= require_self
+
