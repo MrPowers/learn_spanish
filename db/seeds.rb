@@ -12,10 +12,10 @@ Dir.glob("#{Rails.root}/db/seeds/*.rb").each {|f| require f}
   [4, "conditional"],
   [5, "perfect_present"],
   [6, "perfect_past"],
+  [7, "perfect_conditional"],
+  [8, "imperative"],
+  [9, "subjunctive_present"]
   #[7, "perfect_future"],
-  [8, "perfect_conditional"],
-  [9, "imperative"],
-  [10, "subjunctive_present"]
   #[11, "subjunctive_imperfect"],
   #[12, "subjunctive_future"],
   #[13, "subjunctive_imperfect_2"],

@@ -4,7 +4,7 @@ class Question < ActiveRecord::Base
   auto_strip_attributes :spanish, :english, :answer, :hint, :tense
 
   def self.tenses
-    #VerbLearningPath.all.map(&:tense)
+    VerbLearningPath.all.map(&:tense)
   end
 
   validates :spanish, presence: true
@@ -12,7 +12,7 @@ class Question < ActiveRecord::Base
   validates :english, presence: true
   validates :answer, presence: true
   validates :hint, presence: true
-  #validates :tense, inclusion: { in: tenses }, allow_blank: true
+  validates :tense, inclusion: { in: tenses }, allow_blank: true
   validates :word_id, presence: true
 
   def spanish_contains_five_underscores
