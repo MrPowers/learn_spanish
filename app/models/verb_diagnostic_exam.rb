@@ -46,9 +46,7 @@ class VerbDiagnosticExam < ActiveRecord::Base
   end
 
   def words
-    #["ser", "estar", "hacer"]
-    #["ser", "estar", "tener"]
-    ["tener"]
+    ["ser", "estar", "ir", "poder", "tener"]
   end
 
   def total_questions
