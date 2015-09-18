@@ -24,7 +24,7 @@ class VerbDiagnosticExam < ActiveRecord::Base
   end
 
   def next_question_skill_level
-    s = last_3_skill_level + rand(0..2)
+    s = last_3_skill_level + rand(0..4)
     max = VerbLearningPath.maximum("difficulty")
     return max if s > max
     s.to_i

@@ -16,12 +16,10 @@
   <nav class="navbar">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">LearnSpanishSmartly</a>
+        <%= link_to "LunaSpanish", root_path, class: "navbar-brand" %>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Contact</a></li>
           <% if current_user %>
             <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
           <% end %>
