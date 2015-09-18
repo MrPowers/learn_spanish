@@ -11,20 +11,9 @@ class VerbDiagnosticExam < ActiveRecord::Base
     question
   end
 
-  def steps_mastered
-    s = last_3_skill_level
-    v = VerbLearningPath.where("difficulty < ?", s.to_i)
-    v.map(&:tense)
-  end
-
-  def next_step
-    s = last_3_skill_level
-    v = VerbLearningPath.where("difficulty = ?", s.to_i).first
-    v.tense
-  end
-
   def next_question_skill_level
     s = last_3_skill_level + rand(0..4)
+    s = last_3_skill_level + rand(3..6) if verb_diagnostic_answers.order("created_at ASC").last(3).all? {|a| a.is_correct == true}
     max = VerbLearningPath.maximum("difficulty")
     return max if s > max
     s.to_i
@@ -67,6 +56,20 @@ class VerbDiagnosticExam < ActiveRecord::Base
 
   def perfection?
     verb_diagnostic_answers.all? {|a| a.is_correct == true}
+  end
+
+  ### For the view page ###
+
+  def steps_mastered
+    s = last_3_skill_level
+    v = VerbLearningPath.where("difficulty < ?", s.to_i)
+    v.map(&:tense)
+  end
+
+  def next_step
+    s = last_3_skill_level
+    v = VerbLearningPath.where("difficulty = ?", s.to_i).first
+    v.tense
   end
 
   #Ser
