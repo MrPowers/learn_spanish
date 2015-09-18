@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
 
-  get '/welcome', to: "verb_diagnostic_exams#welcome", as: "welcome"
   get '/start_exam', to: "verb_diagnostic_exams#start_exam", as: "start_exam"
   get '/finish_exam', to: "verb_diagnostic_exams#finished_exam", as: "finished_exam"
   get '/finished_perfection', to: "verb_diagnostic_exams#finished_perfection", as: "finished_perfection"
