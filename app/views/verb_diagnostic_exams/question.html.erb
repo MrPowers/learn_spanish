@@ -23,11 +23,21 @@
 <br />
 <br />
 
-<p class="whiteify centerize main-text">Spanish Skill Level: <%= @exam.pretty_skill_level %> / 100</p>
+<div class="container">
+  <p class="whiteify supporting-text"><%= @exam.number_of_questions_remaining %> Questions Remaining</p>
+</div>
 
 <div class="container">
-  <p class="whiteify supporting-text">Number of questions remaining: <%= @exam.number_of_questions_remaining %></p>
+  <div class="progress">
+    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+    aria-valuemin="0" aria-valuemax="100" style="width:<%= @exam.pretty_skill_level %>%">
+      <%= @exam.pretty_skill_level %> Skill Level
+    </div>
+  </div>
+
+  <p class="whiteify centerize supporting-text">Your skill level goes up when you get hard questions right</p>
 </div>
+
 
 <br />
 <br />

@@ -1,19 +1,17 @@
 class VerbDiagnosticExam < ActiveRecord::Base
 
+  # present -> preterite -> imperfect -> conditional -> future
+
   has_many :verb_diagnostic_answers
 
   def next_question
-    question = nil
-    until question
-      word = Word.where(spanish: words.sample).first
-      question = word.questions.where(tense: tense_to_quiz).sample
-    end
-    question
+    q = relevant_questions.where(tense: tense_to_quiz).sample
+    return relevant_questions.sample unless q
+    q
   end
 
   def next_question_skill_level
     s = last_3_skill_level + rand(0..4)
-    s = last_3_skill_level + rand(3..6) if verb_diagnostic_answers.order("created_at ASC").last(3).all? {|a| a.is_correct == true}
     max = VerbLearningPath.maximum("difficulty")
     return max if s > max
     s.to_i
@@ -24,7 +22,7 @@ class VerbDiagnosticExam < ActiveRecord::Base
   end
 
   def last_n_skill_level(n)
-    answers = verb_diagnostic_answers.where(is_correct: true).order("created_at ASC").last(n)
+    answers = verb_diagnostic_answers.order("created_at ASC").last(3).select {|a| a.is_correct == true}
     return 0 if answers.empty?
     arr = answers.map(&:difficulty)
     arr.inject{ |sum, el| sum + el }.to_f / arr.size
@@ -32,6 +30,14 @@ class VerbDiagnosticExam < ActiveRecord::Base
 
   def tense_to_quiz
     VerbLearningPath.where(difficulty: next_question_skill_level).first.tense
+  end
+
+  def relevant_questions
+    @relevant_questions ||= Question.where("word_id in (?)", word_ids)
+  end
+
+  def word_ids
+    @word_ids ||= Word.where("spanish in (?)", words).map(&:id)
   end
 
   def words
@@ -51,7 +57,7 @@ class VerbDiagnosticExam < ActiveRecord::Base
   end
 
   def pretty_skill_level
-    (last_3_skill_level / VerbLearningPath.count * 100).round(1)
+    (last_10_skill_level / VerbLearningPath.count * 100).round(1)
   end
 
   def perfection?
@@ -60,14 +66,19 @@ class VerbDiagnosticExam < ActiveRecord::Base
 
   ### For the view page ###
 
+
+  def last_10_skill_level
+    last_n_skill_level(10)
+  end
+
   def steps_mastered
-    s = last_3_skill_level
+    s = last_10_skill_level
     v = VerbLearningPath.where("difficulty < ?", s.to_i)
     v.map(&:tense)
   end
 
   def next_step
-    s = last_3_skill_level
+    s = last_10_skill_level
     v = VerbLearningPath.where("difficulty = ?", s.to_i).first
     v.tense
   end

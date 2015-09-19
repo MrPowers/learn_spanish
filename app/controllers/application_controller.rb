@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def after_sign_in_path_for(resource_or_scope)
+    start_exam_path
+  end
+
   def require_login
     unless current_user
       redirect_to new_user_session_path

@@ -332,7 +332,7 @@ word_ir.questions.where(
   {
     spanish: "Ella _____ al doctor tres veces esta semana",
     english: "She has gone to the doctor three times this week",
-    answer: "he ido",
+    answer: "ha ido",
     hint: "have gone",
     tense: "perfect_present"
   }

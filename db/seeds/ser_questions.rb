@@ -238,7 +238,7 @@ word_ser.questions.where(
   {
     spanish: "Yo _____ más feliz sin ti",
     english: "They will be very old in 20 years",
-    answer: "serán",
+    answer: "sería",
     hint: "will be",
     tense: "conditional"
   }
