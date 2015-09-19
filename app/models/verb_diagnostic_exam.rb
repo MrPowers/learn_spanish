@@ -71,6 +71,11 @@ class VerbDiagnosticExam < ActiveRecord::Base
     last_n_skill_level(10)
   end
 
+  def step_mastered?(learning_path)
+    s = last_10_skill_level
+    learning_path.difficulty < s.to_i
+  end
+
   def steps_mastered
     s = last_10_skill_level
     v = VerbLearningPath.where("difficulty < ?", s.to_i)

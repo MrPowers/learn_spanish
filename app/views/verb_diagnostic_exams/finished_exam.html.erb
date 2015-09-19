@@ -19,3 +19,12 @@
 <br />
 
 <p class="whiteify centerize supporting-text">Liz is from Colombia, is fluent in English and Spanish and is an excellent tutor!  She can help you learn the <%= @exam.next_step %> tense and accelerate your learning.  Click here to contact Liz and learn how to speak Spanish fluently!</p>
+
+<br />
+<br />
+
+<% VerbLearningPath.all.each do |path| %>
+  <div class="row">
+    <p class="<%= @exam.step_mastered?(path) ? 'learning-path-mastered' : 'whiteify' %> col-md-2 col-md-offset-5"><%= path.tense %></p>
+  </div>
+<% end %>
