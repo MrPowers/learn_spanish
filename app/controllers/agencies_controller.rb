@@ -3,5 +3,8 @@ class AgenciesController < ApplicationController
 
   def index
   end
+
+  def liz
+  end
 end
 

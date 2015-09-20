@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   get '/next_question', to: "question_finder#next_question", as: "next_question"
   post '/set_exam_definition', to: "question_finder#set_exam_definition", as: "set_exam_definition"
 
+  get '/liz', to: "agencies#liz", as: "liz"
   root to: 'agencies#index'
 end
