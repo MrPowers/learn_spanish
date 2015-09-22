@@ -18,6 +18,14 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tense Quizzes<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <% VerbLearningPath.all.each do |path| %>
+                      <li><%= link_to path.tense.humanize, start_verb_exam_path(path.tense) %></li>
+                    <% end %>
+                  </ul>
+                </li>
                 <li>
                     <%= link_to "Take The Quiz!", start_exam_path, class: "page-scroll" %>
                 </li>

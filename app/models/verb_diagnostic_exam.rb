@@ -1,7 +1,5 @@
 class VerbDiagnosticExam < ActiveRecord::Base
 
-  # present -> preterite -> imperfect -> conditional -> future
-
   has_many :verb_diagnostic_answers
 
   def next_question
@@ -65,7 +63,6 @@ class VerbDiagnosticExam < ActiveRecord::Base
   end
 
   ### For the view page ###
-
 
   def last_10_skill_level
     last_n_skill_level(10)

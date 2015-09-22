@@ -1,0 +1,29 @@
+<div class="col-md-12">
+  <div class="col-md-6 whiteify wrong-answer">
+    <div class="answer-explanation">
+      <p class="main-text centerize"><%= @verb_tense_answer.user_answer %></p>
+      <p class="supporting-text centerize">Your answer</p>
+    </div>
+  </div>
+
+  <div class="col-md-6 whiteify right-answer">
+    <p class="main-text centerize"><%= @question.answer %></p>
+    <p class="supporting-text centerize">Correct answer</p>
+  </div>
+</div>
+
+<div class='row col-md-8 col-md-offset-2 answer-sentences'>
+  <p class="whiteify answer-sentence"><%= emojify(":alien: #{@question.spanish_sentence}") %></p>
+  <p class="whiteify answer-sentence pull-right"><%= emojify("#{@question.english} :smile:") %></p>
+</div>
+
+<div class='row col-md-12'>
+  <div class="row col-md-4 col-md-offset-4">
+    <%= link_to "Next question", next_verb_tense_question_path(tense: @question.tense, exam_id: @verb_tense_answer.verb_tense_exam_id), class: "btn btn-lg btn-success centerize main-text", id: "next-question" %>
+  </div>
+</div>
+
+<div class='row col-md-12 answer-shortcut-hint'>
+  <p class="supporting-text centerize whiteify">Hint: Press enter to move to the next question</p>
+</div>
+
