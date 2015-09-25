@@ -10,4 +10,9 @@ namespace :frequency_dictonary do
     WordCreator.new.create_words
   end
 
+  desc "Parts of speech"
+  task :parts_of_speech => :environment do
+    p WordCreator.new.parts_of_speech
+  end
+
 end

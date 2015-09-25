@@ -20,4 +20,13 @@ class WordCreator
     end
   end
 
+  def parts_of_speech
+    r = []
+    word_parsers.each do |word_parser|
+      pos = word_parser.send :part_of_speech
+      r.push(pos) unless r.include?(pos)
+    end
+    r
+  end
+
 end

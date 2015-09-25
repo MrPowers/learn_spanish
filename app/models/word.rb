@@ -5,18 +5,7 @@ class Word < ActiveRecord::Base
   auto_strip_attributes :spanish, :english, :part_of_speech, :frequency
 
   def self.parts_of_speech
-    [
-      "art",
-      "prep",
-      "conj",
-      "v",
-      "pron",
-      "adv",
-      "adj",
-      "nf",
-      "nm",
-      "num"
-    ].sort
+    ["prep", "conj", "art", "v", "pron", "adv", "adj", "nf", "nm", "num", "nmf", "nm/f", "nc", "aj", "interj", "n"].sort
   end
 
   validates :spanish, presence: true
