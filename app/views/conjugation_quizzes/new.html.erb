@@ -5,11 +5,11 @@
   <br />
 
   <%= form_for @conjugation_quiz do |f| %>
-    <p class="whiteify">Select the tense you'd like to practice</p>
+    <%= f.label :tense, "Select the tense you'd like to practice", class: "whiteify" %>
     <%= f.select :tense, ["present", "preterite", "imperfect", "conditional", "future"], {}, {placeholder: "Tense", class: "form-control"}%><br />
-    <p class="whiteify">How many questions do you want to answer?</p>
+    <%= f.label :number_of_questions, "How many questions do you want to answer?", class: "whiteify" %>
     <%= f.number_field :number_of_questions, placeholder: "Number of Questions", class: "form-control" %><br />
-    <p class="whiteify">Of the 1,000 most common verbs, how many do you want to practice?</p>
+    <%= f.label :number_of_verbs, "Of the 1,000 most common verbs, how many do you want to practice?", class: "whiteify" %>
     <%= f.number_field :number_of_verbs, placeholder: "Number of Verbs (any number from 1 to 1,000)", class: "form-control" %><br />
     <div class="actions">
       <%= f.submit "Start Exam", class: "btn btn-lg btn-success btn-block" %>
