@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_in_path_for(resource_or_scope)
-    start_exam_path
+    new_conjugation_quiz_path
   end
 
   def require_login
