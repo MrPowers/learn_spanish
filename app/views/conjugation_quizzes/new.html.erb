@@ -1,13 +1,16 @@
 <div class="row col-md-4 col-md-offset-4">
 
-  <h3 class="whiteify centerize">Start a Quiz</h3>
+  <h3 class="whiteify centerize">Practice Verb Conjugations!</h3>
 
   <br />
 
   <%= form_for @conjugation_quiz do |f| %>
+    <p class="whiteify">Select the tense you'd like to practice</p>
     <%= f.select :tense, ["present", "preterite", "imperfect", "conditional", "future"], {}, {placeholder: "Tense", class: "form-control"}%><br />
+    <p class="whiteify">How many questions do you want to answer?</p>
     <%= f.number_field :number_of_questions, placeholder: "Number of Questions", class: "form-control" %><br />
-    <%= f.number_field :number_of_verbs, placeholder: "Number of Verbs (any number from 1-1,000)", class: "form-control" %><br />
+    <p class="whiteify">Of the 1,000 most common verbs, how many do you want to practice?</p>
+    <%= f.number_field :number_of_verbs, placeholder: "Number of Verbs (any number from 1 to 1,000)", class: "form-control" %><br />
     <div class="actions">
       <%= f.submit "Start Exam", class: "btn btn-lg btn-success btn-block" %>
     </div>
