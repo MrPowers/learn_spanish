@@ -3,6 +3,13 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
 
+  resources :conjugation_quizzes
+  get '/conjugation_quizzes/:id/question', to: "conjugation_quizzes#question", as: "conjugation_quiz_question"
+  get '/conjugation_quizzes/:id/finished', to: "conjugation_quizzes#finished", as: "conjugation_quiz_finished"
+  resources :conjugation_answers
+
+  resources :words, only: [:index]
+
   get '/start_verb_exam/:tense', to: "verb_tense_exams#start_exam", as: "start_verb_exam"
   get '/finish_verb_tense_exam/:exam_id', to: "verb_tense_exams#finished_exam", as: "finish_verb_tense_exam"
   get '/next_verb_tense_question/:tense/:exam_id', to: "verb_tense_exams#next_question", as: "next_verb_tense_question"

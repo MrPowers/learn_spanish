@@ -18,4 +18,17 @@ class Word < ActiveRecord::Base
     spanish
   end
 
+  #spanish,english,part_of_speech,frequency,commonly_oral
+  #english,spanish
+
+  def self.to_csv(options = {})
+    words = Word.order(:frequency).all
+    CSV.generate(options) do |csv|
+      words.each do |word|
+        next if word.part_of_speech == "prep"
+        csv << [word.english, word.spanish]
+      end
+    end
+  end
+
 end

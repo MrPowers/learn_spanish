@@ -20,5 +20,6 @@
 //= require general
 //= require questions
 //= require textarea
+//= require conjugation_quizzes_questions
 //= require_self
 

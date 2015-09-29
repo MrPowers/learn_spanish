@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922004314) do
+ActiveRecord::Schema.define(version: 20150928214900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,24 @@ ActiveRecord::Schema.define(version: 20150922004314) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "conjugation_answers", force: :cascade do |t|
+    t.integer  "conjugation_quiz_id"
+    t.string   "user_answer"
+    t.string   "correct_answer"
+    t.string   "tense"
+    t.string   "pronoun"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "conjugation_quizzes", force: :cascade do |t|
+    t.string   "tense"
+    t.integer  "number_of_questions"
+    t.integer  "number_of_verbs"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "exam_definitions", force: :cascade do |t|
