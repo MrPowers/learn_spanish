@@ -7,7 +7,7 @@ class ConjugationQuizzesController < ApplicationController
   end
 
   def create
-    @conjugation_quiz = ConjugationQuiz.create(conjugation_quiz_params)
+    @conjugation_quiz = ConjugationQuiz.create(conjugation_quiz_params.merge(user_id: current_user.id))
     redirect_to conjugation_quiz_question_path(id: @conjugation_quiz.id)
   end
 

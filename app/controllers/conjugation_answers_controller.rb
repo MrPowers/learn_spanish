@@ -3,7 +3,7 @@ class ConjugationAnswersController < ApplicationController
   before_filter :require_login
 
   def create
-    @conjugation_answer = ConjugationAnswer.create(conjugation_answer_params)
+    @conjugation_answer = ConjugationAnswer.create(conjugation_answer_params.merge(user_id: current_user.id))
     if @conjugation_answer.correct?
       redirect_to conjugation_quiz_question_path(id: @conjugation_answer.conjugation_quiz_id)
     else
