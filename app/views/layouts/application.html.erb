@@ -20,6 +20,12 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
+          <li>
+            <%= link_to "Review Nouns", new_noun_quiz_path, class: "page-scroll" %>
+          </li>
+          <li>
+            <%= link_to "Practice Conjugations!", new_conjugation_quiz_path, class: "page-scroll" %>
+          </li>
           <% if current_user %>
             <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
           <% end %>

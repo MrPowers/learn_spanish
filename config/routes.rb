@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   get '/conjugation_quizzes/:id/finished', to: "conjugation_quizzes#finished", as: "conjugation_quiz_finished"
   resources :conjugation_answers
 
+  resources :noun_quizzes
+  get '/noun_quizzes/:id/question', to: "noun_quizzes#question", as: "noun_quiz_question"
+  get '/noun_quizzes/:id/finished', to: "noun_quizzes#finished", as: "noun_quiz_finished"
+  resources :noun_answers
+
   resources :words, only: [:index]
 
   get '/start_verb_exam/:tense', to: "verb_tense_exams#start_exam", as: "start_verb_exam"
