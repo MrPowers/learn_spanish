@@ -1,7 +1,5 @@
 class VerbTenseAnswersController < ApplicationController
 
-  before_filter :require_login
-
   def create
     @verb_tense_answer = VerbTenseAnswer.create!(verb_tense_answer_params)
     if @verb_tense_answer.is_correct

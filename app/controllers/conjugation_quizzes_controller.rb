@@ -1,7 +1,5 @@
 class ConjugationQuizzesController < ApplicationController
 
-  before_filter :require_login
-
   def new
     @conjugation_quiz = ConjugationQuiz.new
   end

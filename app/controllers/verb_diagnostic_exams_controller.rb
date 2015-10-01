@@ -1,7 +1,5 @@
 class VerbDiagnosticExamsController < ApplicationController
 
-  before_filter :require_login
-
   def start_exam
     exam = VerbDiagnosticExam.create(user_id: current_user.id)
     session[:verb_diagnostic_exam_id] = exam.id

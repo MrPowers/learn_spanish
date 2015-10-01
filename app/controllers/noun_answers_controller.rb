@@ -1,7 +1,5 @@
 class NounAnswersController < ApplicationController
 
-  before_filter :require_login
-
   def create
     @noun_answer = NounAnswer.create(noun_answer_params.merge(user_id: current_user.id))
     if @noun_answer.correct?

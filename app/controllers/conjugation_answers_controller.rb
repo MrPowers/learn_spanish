@@ -1,7 +1,5 @@
 class ConjugationAnswersController < ApplicationController
 
-  before_filter :require_login
-
   def create
     @conjugation_answer = ConjugationAnswer.create(conjugation_answer_params.merge(user_id: current_user.id))
     if @conjugation_answer.correct?

@@ -1,7 +1,5 @@
 class AnswersController < ApplicationController
 
-  before_filter :require_login
-
   def create
     @answer = Answer.create!(answer_params)
     exam = Exam.where(user_id: current_user.id, exam_definition_id: session[:exam_definition_id]).first_or_create

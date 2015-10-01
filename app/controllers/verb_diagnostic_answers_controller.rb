@@ -1,7 +1,5 @@
 class VerbDiagnosticAnswersController < ApplicationController
 
-  before_filter :require_login
-
   def create
     @verb_diagnostic_answer = VerbDiagnosticAnswer.new(verb_diagnostic_answer_params)
     @verb_diagnostic_answer.verb_diagnostic_exam_id = session[:verb_diagnostic_exam_id]

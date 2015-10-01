@@ -1,7 +1,5 @@
 class VerbTenseExamsController < ApplicationController
 
-  before_filter :require_login
-
   def start_exam
     exam = VerbTenseExam.create(user_id: current_user.id, tense: params[:tense])
     redirect_to next_verb_tense_question_path(tense: exam.tense, exam_id: exam.id)

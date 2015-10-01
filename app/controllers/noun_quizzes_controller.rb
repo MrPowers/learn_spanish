@@ -1,7 +1,5 @@
 class NounQuizzesController < ApplicationController
 
-  before_filter :require_login
-
   def new
     @noun_quiz = NounQuiz.new
   end
