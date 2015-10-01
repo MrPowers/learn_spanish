@@ -20,7 +20,7 @@ class NounQuizzesController < ApplicationController
   end
 
   def finished
-    @noun_quiz = NounQuiz.find(params[:id])
+    @quiz = NounQuiz.find(params[:id])
   end
 
   private

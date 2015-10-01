@@ -1,9 +1,1 @@
-<p class="whiteify centerize main-text">Percent Correct: <%= @conjugation_quiz.pretty_percent_correct %>%</p>
-<p class="whiteify centerize main-text">Correct Answers: <%= @conjugation_quiz.correct_answers %></p>
-<p class="whiteify centerize main-text">Incorrect Answers: <%= @conjugation_quiz.incorrect_answers %></p>
-
-<div class='row col-md-12'>
-  <div class="row col-md-6 col-md-offset-3">
-    <%= link_to "Take Another Quiz", new_conjugation_quiz_path, class: "btn btn-lg btn-success centerize main-text" %>
-  </div>
-</div>
+<%= render "finished_quiz/summary" %>

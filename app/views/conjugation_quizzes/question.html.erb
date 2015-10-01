@@ -3,7 +3,7 @@
 <%= form_for @conjugation_answer do |f| %>
   <p class="whiteify centerize main-text">
     <%= @pretty_pronoun %>
-    <%= f.text_field :user_answer, placeholder: "Answer", autofocus: true, class: "blueify", size: [@correct_answer.length + rand(1..5), 8].max %>
+    <%= f.text_field :user_answer, autofocus: true, class: "blueify centerize-input", size: [@correct_answer.length + rand(1..5), 8].max, autocomplete: :off %>
     <%= f.hidden_field :conjugation_quiz_id, value: params[:id] %>
     <%= f.hidden_field :correct_answer, value: @correct_answer %>
     <%= f.hidden_field :tense, value: @conjugation_quiz.tense %>
@@ -11,3 +11,8 @@
     <%= f.submit "Submit Answer", class: "btn btn-lg btn-success centerize check-answer" %>
   </p>
 <% end %>
+
+<br />
+<br />
+
+<p class="whiteify supporting-text">Questions Remaining: <%= @conjugation_quiz.questions_remaining %></p>

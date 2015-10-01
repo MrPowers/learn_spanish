@@ -22,7 +22,7 @@ class ConjugationQuizzesController < ApplicationController
   end
 
   def finished
-    @conjugation_quiz = ConjugationQuiz.find(params[:id])
+    @quiz = ConjugationQuiz.find(params[:id])
   end
 
   private
