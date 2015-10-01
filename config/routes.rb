@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
   resources :conjugation_quizzes
   get '/conjugation_quizzes/:id/question', to: "conjugation_quizzes#question", as: "conjugation_quiz_question"

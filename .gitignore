@@ -11,5 +11,6 @@
 /log/*
 !/log/.keep
 /tmp
+.env
 
 to_do
