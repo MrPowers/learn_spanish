@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   resources :answers, only: [:create, :show]
 
   get '/about', to: "static_pages#about", as: "about"
+  get '/me_voy', to: "static_pages#me_voy", as: "me_voy"
 
   get '/next_question', to: "question_finder#next_question", as: "next_question"
   post '/set_exam_definition', to: "question_finder#set_exam_definition", as: "set_exam_definition"

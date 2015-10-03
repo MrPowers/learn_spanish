@@ -18,5 +18,6 @@
 //= require exam_definition
 //= require conjugation_quizzes_questions
 //= require footer
+//= require music
 //= require_self
 

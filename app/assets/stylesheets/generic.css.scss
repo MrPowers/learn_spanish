@@ -49,3 +49,8 @@
     box-shadow: 0 0 0 10px black;
     margin:10px;
 }
+
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+  border: none;
+}
+
