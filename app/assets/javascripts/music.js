@@ -1,9 +1,10 @@
 $(document).ready(function(){
-  var player = document.getElementById("audio-player");
+  var players = document.getElementsByClassName("audio-player");
   $("select").change(function() {
     var speed = $(this).val();
-    console.log(speed);
-    player.playbackRate = speed;
+    $.each(players, function( index, player ) {
+      player.playbackRate = speed;
+    });
   });
 });
 
